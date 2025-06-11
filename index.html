@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spesial Buat Kamu</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" async defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://dari-deka.github.io/assets/popup-bg.jpg') center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 1rem;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .container img {
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+
+    .container p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .btn-start {
+      background-color: #6e86f8;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      transition: 0.3s ease;
+    }
+
+    .btn-start:hover {
+      background-color: #5a72e1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>Hi bawel, aku boleh bilang sesuatu nggak? Kamu baca yaa...</p>
+    <img src="https://dari-deka.github.io/assets/Stiker%203.gif" alt="Stiker lucu">
+    <button class="btn-start">Klik Disini</button>
+  </div>
+
+  <!-- Pemutar Audio -->
+  <audio autoplay loop id="background-audio">
+    <source src="ternyata-cinta-padi-lirik-felix-irwan-cover_A36HOj9o.mp3" type="audio/mpeg">
+    Browser tidak mendukung audio.
+  </audio>
+
+  <script>
+    const swalo = Swal.mixin({
+      allowOutsideClick: false,
+      confirmButtonText: "Next"
+    });
+
+    async function start() {
+      document.getElementById("background-audio").play();
+
+      await swalo.fire({
+        title: "Sebenarnya aku nggak pernah seperti ini, apalagi buat kata-kata, tapi ini aku usahain untuk kamu ya hehe",
+        imageUrl: "https://dari-deka.github.io/assets/Stiker%2021.gif"
+      });
+
+      await swalo.fire({
+        title: "Sebelumnya makasih ya kamu udah hadir di kehidupanku😊",
+        text: "Walaupun kita belum pernah ketemu dan kita juga kebetulan dijauhkan dengan jarak, aku yakin Tuhan mempertemukan kita dengan caraNya.",
+        imageUrl: "https://dari-deka.github.io/assets/Stiker%2029.gif"
+      });
+
+      await swalo.fire({
+        title: "Aku cuma mau bilang makasih untuk semuanya dan Maaf kalau aku kadang bikin kamu marah/cape...",
+        text: "Jujur ini pengalaman pertama yg belum aku dapatkan sebelumnya...",
+        imageUrl: "https://dari-deka.github.io/assets/Stiker%208.gif"
+      });
+
+      await swalo.fire({
+        title: "Sekarang aku benar-benar merasakan apa arti cinta yg sebenarnya...",
+        text: "Jika aku melakukan kesalahan tolong tegur aku, Arahin dan Ajarin aku biar bisa jadi orang yang kamu mau.",
+        imageUrl: "https://dari-deka.github.io/assets/Stiker%2019.gif"
+      });
+
+      await swalo.fire({
+        title: "Jika rasa sabarmu memang untuk menunggu perjuanganku demi menghalalkanmu...",
+        text: "Tetap jadi dirimu yg sekarang ya wel, jangan pernah berubah dan aku juga pastikan bahwa aku nggak akan berubah untukmu. I love you bawel ❤️❤️",
+        imageUrl: "https://dari-deka.github.io/assets/Stiker%2025.gif"
+      });
+    }
+
+    document.querySelector(".btn-start").addEventListener("click", start);
+  </script>
+</body>
+</html>
